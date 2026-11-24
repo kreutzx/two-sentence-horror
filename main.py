@@ -1,20 +1,16 @@
 import os
 
-LINE = (
-    "The babysitter texted that the baby had finally stopped crying at "
-    "3 a.m. I was still driving home, and my daughter was asleep in the "
-    "back seat."
-)
+# Two-sentence horror entry for make.fun.
+ENTRY_TEXT = "Through the baby monitor, a woman sang our daughter to sleep, soft and slow. My wife gripped my arm in the doorway — we don't have a daughter."
 
 
 def main():
-    # Exactly two sentences; the gate allows at most 400 characters; this story is 143.
-    assert 1 <= len(LINE.strip()) <= 400, len(LINE)
+    # Write the entry verbatim, with a trailing newline, to /output/entry.txt.
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     entry_path = os.path.join(out_dir, "entry.txt")
     with open(entry_path, "w", encoding="utf-8") as f:
-        f.write(LINE)
+        f.write(ENTRY_TEXT + "\n")
 
 
 if __name__ == "__main__":
